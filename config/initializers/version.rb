@@ -1,5 +1,7 @@
-class RoRTestguru::Application::VERSION
+module RoRTestGuru
+	class Application
 
-	VERSION = '0.1.0'
+		VERSION = '0.1.0'
 
-end 
+	end 
+end
