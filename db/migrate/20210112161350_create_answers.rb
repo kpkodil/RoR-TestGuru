@@ -1,10 +1,9 @@
 class CreateAnswers < ActiveRecord::Migration[6.1]
   def change
     create_table :answers do |t|
-      #t.references :answers, :question#, foreign_key: true  
-      t.references :question
+      t.references :question, foreign_key: true 
       t.string :title, null: false
-      t.boolean :correct
+      t.boolean :correct, null: false
 
       t.timestamps
     end
