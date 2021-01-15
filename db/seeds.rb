@@ -6,65 +6,46 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories_seed = [
-  "Category1",
-  "Category2"   
-]
-categories_seed.each do |title|
-  if Category.where(title: title).empty?
-    Category.create!(title: title)
-  end 
-end
+if Test.all.empty? 
+  Category.create!([
+    {title: "Category1"},
+    {title: "Category2"}
+  ])
 
-users = [
-  "User1",
-  "User2"
-]
-users.each do |name|
-  if User.where(name: name).empty?
-    User.create!(name: name)
-  end
-end
+  User.create!([
+    {name: "User1"},
+    {name: "User2"}
+  ])
 
-tests = [
-  ["Test1", Category.find_by(id: 1).id, User.find_by(id: 1).id],
-  ["Test2", Category.find_by(id: 2).id, User.find_by(id: 2).id],
-  ["Test3", Category.find_by(id: 1).id, User.find_by(id: 1).id]  
-]
-tests.each do |title, category_id, author_id|
-  if Test.where(title: title, category_id: category_id, author_id: author_id).empty?
-    Test.create!(title: title, category_id: category_id, author_id: author_id)
-  end
-end
+  Test.create!([
+    {title: "Test1", category_id: 1, author_id: 1},
+    {title: "Test2", category_id: 2, author_id: 2},
+    {title: "Test3", category_id: 1, author_id: 2}
+  ])
 
-questions = [
-  ["Question1", Test.find_by(id: 1).id],
-  ["Question2", Test.find_by(id: 2).id]
-]
-questions.each do |title, test_id|
-  if Question.where(title: title, test_id: test_id).empty?
-    Question.create!(title: title, test_id: test_id)
-  end
-end
+  Question.create!([
+    {title: "Question1", test_id: 1},
+    {title: "Question2", test_id: 1},
+    {title: "Question3", test_id: 2},
+    {title: "Question4", test_id: 2},
+    {title: "Question5", test_id: 3},
+    {title: "Question6", test_id: 3}
+  ])
 
-answers = [
-  ["Answer1", Question.find_by(id: 1).id],
-  ["Answer2", Question.find_by(id: 2).id],
-  ["Answer3", Question.find_by(id: 1).id]  
-]
-answers.each do |title,question_id|
-  if Answer.where(title: title, question_id: question_id).empty?
-    Answer.create!(title: title, question_id: question_id)
-  end
-end
+  Answer.create!([
+    {title: "Answer1", question_id: 1},
+    {title: "Answer2", question_id: 1},
+    {title: "Answer3", question_id: 2},
+    {title: "Answer4", question_id: 2},
+    {title: "Answer5", question_id: 3},
+    {title: "Answer6", question_id: 4},
+    {title: "Answer7", question_id: 5},
+    {title: "Answer8", question_id: 6}
+  ])
 
-usertests = [
-  [User.find_by(id: 1).id, Test.find_by(id: 1).id],
-  [User.find_by(id: 1).id, Test.find_by(id: 2).id],
-  [User.find_by(id: 1).id, Test.find_by(id: 3).id]  
-]
-usertests.each do |user_id,test_id|
-  if UserTest.where(user_id: user_id, test_id: test_id).empty?
-    UserTest.create!(user_id: user_id, test_id: test_id)
-  end
+  UserTest.create!([
+    {user_id: 1, test_id: 1},
+    {user_id: 1, test_id: 2},
+    {user_id: 1, test_id: 3}
+  ])
 end
