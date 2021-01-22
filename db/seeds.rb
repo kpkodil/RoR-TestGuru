@@ -13,14 +13,14 @@ unless Test.exists?
   ])
 
   users = User.create!([
-    {name: "User1"},
-    {name: "User2"}
+    {name: "User1", email: "sasha-burov@mail.ru"},
+    {name: "User2", email: "kpkodil@gmail.com"}
   ])
 
   tests = Test.create!([
-    {title: "Test1",           category: category[0], author_id: users[0].id},
-    {title: "Test2", level: 1, category: category[1], author_id: users[1].id},
-    {title: "Test3", level: 1, category: category[0], author_id: users[1].id}
+    {title: "Test1",           category: categories[0], author_id: users[0].id},
+    {title: "Test2", level: 1, category: categories[1], author_id: users[1].id},
+    {title: "Test3", level: 1, category: categories[0], author_id: users[1].id}
   ])
 
   questions = Question.create!([
@@ -34,10 +34,10 @@ unless Test.exists?
 
   Answer.create!([
     {title: "Answer1", question_id: questions[0].id},
-    {title: "Answer2", question_id: questions[0].id},
-    {title: "Answer3", question_id: questions[1].id},
-    {title: "Answer4", question_id: questions[1].id},
-    {title: "Answer5", question_id: questions[2].id},
+    {title: "Answer2", question_id: questions[1].id},
+    {title: "Answer3", question_id: questions[2].id},
+    {title: "Answer4", question_id: questions[2].id},
+    {title: "Answer5", question_id: questions[3].id},
     {title: "Answer6", question_id: questions[3].id},
     {title: "Answer7", question_id: questions[4].id},
     {title: "Answer8", question_id: questions[5].id}
