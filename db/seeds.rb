@@ -18,9 +18,9 @@ unless Test.exists?
   ])
 
   tests = Test.create!([
-    {title: "Test1", category_id: categories[0].id, author_id: users[0].id},
-    {title: "Test2", category_id: categories[1].id, author_id: users[1].id},
-    {title: "Test3", category_id: categories[0].id, author_id: users[1].id}
+    {title: "Test1",           category: category[0], author_id: users[0].id},
+    {title: "Test2", level: 1, category: category[1], author_id: users[1].id},
+    {title: "Test3", level: 1, category: category[0], author_id: users[1].id}
   ])
 
   questions = Question.create!([
@@ -43,9 +43,15 @@ unless Test.exists?
     {title: "Answer8", question_id: questions[5].id}
   ])
 
-  UserTest.create!([
+  TestsUser.create!([
     {user_id: users[0].id, test_id: tests[0].id},
     {user_id: users[0].id, test_id: tests[1].id},
     {user_id: users[0].id, test_id: tests[2].id}
   ])
+
+  # AuthorTests.create!([
+  #   {author_id: users[0].id, test_id: tests[0].id},
+  #   {author_id: users[0].id, test_id: tests[1].id},
+  #   {author_id: users[0].id, test_id: tests[2].id}
+  # ])
 end
