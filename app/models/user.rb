@@ -1,9 +1,7 @@
 class User < ApplicationRecord
 
-  has_many :tests_users
-
-  has_many :tests, through: :tests_users, dependent: :destroy
-  
+  has_many :tests_users, dependent: :destroy
+  has_many :passed_tests, through: :tests_users, foreign_key: 'test_id'
   has_many :own_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
 
   def passing_tests_level(tests_level)
