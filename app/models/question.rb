@@ -6,6 +6,4 @@ class Question < ApplicationRecord
 
   validates :title, presence: true
 
-  validates :answers, length: {in: 1..4,
-    out_of_range: "range is 1 - 4"}
 end
