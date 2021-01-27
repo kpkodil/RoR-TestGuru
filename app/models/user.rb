@@ -7,13 +7,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :name, presence: true
 
-  scope :passing_tests, -> (tests_level, user) {
-    user.passed_tests
-    .where(level: tests_level)
-  }
-
   def passable_tests_of_level(tests_level)
-   self.class.passing_tests(tests_level, self)
    Test.joins(:tests_users)
    .by_level(tests_level)
    .where(tests_users: { user_id: id })

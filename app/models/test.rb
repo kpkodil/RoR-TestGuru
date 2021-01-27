@@ -19,7 +19,7 @@ class Test < ApplicationRecord
   scope :by_level, -> (level) { where(level: level) }
   scope :desc_by_category_title, -> (category_title) { joins(:category)
                                                         .where(categories: { title: category_title })
-                                                        .order(id: :desc)
+                                                        .order(title: :desc)
                                                       }
 
   private
