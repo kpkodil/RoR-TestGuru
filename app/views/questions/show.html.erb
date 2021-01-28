@@ -1,0 +1,5 @@
+<% question = Question.find(params[:id]) %>
+<h1><%= question.title %></h1>
+
+<%= link_to "Back to questions List", test_questions_path(params[:test_id]) %>
+<%= link_to "Delete", test_question_path(test_id: params[:test_id], id: params[:id]) , method: :delete %>
