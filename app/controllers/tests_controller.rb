@@ -1,8 +1,5 @@
 class TestsController < ApplicationController
 
-  before_action :set_test, only: :show
-  after_action :send_log_message
-  around_action :log_execute_time
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -23,9 +20,9 @@ class TestsController < ApplicationController
   def new; end
 
   def create
-    test = Test.create(question_params)
-    if test.errors.empty?
-      redirect_to action: "index"
+    test = Test.create!(test_params)
+    if test.save
+      redirect_to test_path
     else
       render "new"
     end
@@ -37,7 +34,6 @@ private
     start = Time.now
     yield
     finish = Time.now - start
-
     logger.info("Execution time: #{finish * 1000}ms")
   end
 
