@@ -22,24 +22,13 @@ class TestsController < ApplicationController
   def create
     test = Test.create!(test_params)
     if test.save
-      redirect_to test_path
+      redirect_to tests_path
     else
       render "new"
     end
   end
 
 private
-
-  def log_execute_time
-    start = Time.now
-    yield
-    finish = Time.now - start
-    logger.info("Execution time: #{finish * 1000}ms")
-  end
-
-  def send_log_message
-    logger.info("Action [#{action_name}] was finished")
-  end
 
   def test_params
     params.require(:test).permit(:title, :level)
