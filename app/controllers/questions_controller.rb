@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to test_questions_path(@test)
     else
-      render "new"
+      render :new
     end
   end
 

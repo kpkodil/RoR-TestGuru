@@ -5,7 +5,6 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
-    render json: @tests
   end
 
   def show
@@ -24,7 +23,7 @@ class TestsController < ApplicationController
     if test.save
       redirect_to tests_path
     else
-      render "new"
+      render :new
     end
   end
 
