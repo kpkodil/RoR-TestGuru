@@ -43,9 +43,9 @@ unless Test.exists?
     { title: "Answer8", question: questions[5] }
   ])
 
-  TestsUser.create!([
-    { user: users[0], passed_test: tests[0] },
-    { user: users[0], passed_test: tests[1] },
-    { user: users[0], passed_test: tests[2] }
-  ])
+  # TestPassage.create!([
+  #   { user: users[0], test: tests[0], current_question: questions[0] },
+  #   { user: users[0], test: tests[2], current_question: questions[5] },
+  #   { user: users[0], test: tests[1], current_question: questions[3] }
+  # ])
 end

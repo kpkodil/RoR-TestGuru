@@ -6,13 +6,13 @@ class Answer < ApplicationRecord
   
   validate :validate_number_of_answers, on: :create
 
-  scope :right_answers, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   private
 
   def validate_number_of_answers
     errors.add(:question, 'must have less or equal than 4 answers') if 
-      question.answers.size >= 4
+      question.answers.size > 4
   end
 
 end
