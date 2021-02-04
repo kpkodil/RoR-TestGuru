@@ -3,9 +3,10 @@
 <h2>You have correctly answered <%= pluralize(@test_passage.correct_questions, 'question')%>! </h2>
 
 <% if @test_passage.success? %>
-  <p> You have passed <font color="green"><%= @test_passage.success_rate %>%</font> of test</p>
+<% percents = @test_passage.success_rate  %>
+  <p> You have passed <span class='success'><%= percents %>%</span> of test</p>
 <% else %>
-  <p> You have passed <font color="red"><%= @test_passage.success_rate %>%</font> of test</p>
+  <p> You have passed <span class='fail'><%= percents %>%</span> of test</p>
 <% end %>
 
 <p><%= link_to 'Back to tests', tests_path %></p>
