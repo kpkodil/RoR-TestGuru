@@ -42,10 +42,4 @@ unless Test.exists?
     { title: "Answer7", question: questions[4] },
     { title: "Answer8", question: questions[5] }
   ])
-
-  TestsUser.create!([
-    { user: users[0], passed_test: tests[0] },
-    { user: users[0], passed_test: tests[1] },
-    { user: users[0], passed_test: tests[2] }
-  ])
 end

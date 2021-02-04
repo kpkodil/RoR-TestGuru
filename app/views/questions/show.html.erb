@@ -1,3 +1,11 @@
 <h1><%= @question.title %></h1>
-<%= link_to "Back to #{ @question.test.title } questions list", test_path(@question.test_id) %>
-<%= link_to "Delete", question_path(@question) , method: :delete %><br>
+
+<h2>Answers:</h2>
+
+<ol>
+    <%= render @question.answers %>
+</ol>
+
+<%= link_to 'New Answer', new_question_answer_path(@question) %><br>
+<%= link_to "Back to #{ @question.test.title } questions list", test_path(@question.test_id) %><br>
+<%= link_to "Delete #{@question.title} question", question_path(@question), method: :delete %><br>
