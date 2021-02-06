@@ -13,8 +13,8 @@ unless Test.exists?
   ])
 
   users = User.create!([
-    { name: "User1", email: "sasha-burov@mail.ru" },
-    { name: "User2", email: "kpkodil@gmail.com" }
+    { name: "User1", email: "sasha-burov@mail.ru", password: "password1" },
+    { name: "User2", email: "kpkodil@gmail.com", password: "password2" }
   ])
 
   tests = Test.create!([

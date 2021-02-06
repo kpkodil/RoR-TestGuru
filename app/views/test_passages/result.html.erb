@@ -2,11 +2,7 @@
 
 <h2>You have correctly answered <%= pluralize(@test_passage.correct_questions, 'question')%>! </h2>
 
-<% if @test_passage.success? %>
-<% percents = @test_passage.success_rate  %>
-  <p> You have passed <span class='success'><%= percents %>%</span> of test</p>
-<% else %>
-  <p> You have passed <span class='fail'><%= percents %>%</span> of test</p>
-<% end %>
+<% success_or_fail_result =  @test_passage.success? ? "success" : "fail" %>
+<p> You have passed <span class=<%= success_or_fail_result %>><%= @test_passage.success_rate %>%</span> of test</p>
 
 <p><%= link_to 'Back to tests', tests_path %></p>
