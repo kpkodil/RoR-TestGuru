@@ -1,7 +1,5 @@
 class TestsController < ApplicationController
-
-  #before_action :authenticate_user!, only: %i[create edit update destroy start]
-
+  
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
