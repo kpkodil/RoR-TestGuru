@@ -7,5 +7,5 @@
 </ol>
 
 <%= link_to 'New Answer', new_question_answer_path(@question) %><br>
-<%= link_to "Back to #{ @question.test.title } questions list", test_path(@question.test_id) %><br>
+<%= link_to "Back to #{ @question.test.title } questions list", admin_test_path(@question.test_id) %><br>
 <%= link_to "Delete #{@question.title} question", question_path(@question), method: :delete %><br>

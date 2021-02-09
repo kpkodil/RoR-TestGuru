@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: %i[show]
+  #skip_before_action :authenticate_user!, only: %i[show]
 
   before_action :set_test, only: %i[index create new]
   before_action :set_question, only: %i[show destroy edit]
