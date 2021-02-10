@@ -11,11 +11,8 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    unless resource.first_name.empty? || resource.last_name.empty?
-      flash[:notice] = "Привет, #{resource.first_name} #{resource.last_name}!"
-    end
     if resource.is_a?(Admin)
-      admin_tests_path
+      stored_location_for(resource)
     else
       super
     end
