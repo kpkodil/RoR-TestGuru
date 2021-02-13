@@ -13,14 +13,14 @@ unless Test.exists?
   ])
 
   users = User.create!([
-    { name: "User1", email: "sasha-burov@mail.ru", password: "password1" },
-    { name: "User2", email: "kpkodil@gmail.com", password: "password2" }
+    { email: "sasha-burov@mail.ru", password: "password1", first_name: "Sasha", last_name: "Burov", type: "Admin" },
+    { email: "kpkodil@gmail.com", password: "password2", first_name: "Pasha", last_name: "Burov" }
   ])
 
   tests = Test.create!([
     { title: "Test1",           category: categories[0], author: users[0] },
-    { title: "Test2", level: 1, category: categories[1], author: users[1] },
-    { title: "Test3", level: 1, category: categories[0], author: users[1] }
+    { title: "Test2", level: 1, category: categories[1], author: users[0] },
+    { title: "Test3", level: 1, category: categories[0], author: users[0] }
   ])
 
   questions = Question.create!([
