@@ -45,8 +45,9 @@ en:
   test_passages:
     result:
       header: "the %{title} Test was completed!"
-    gist:
-      success: "Gist was successfully created!"
+  gists:
+    create:
+      success:  <a href="%{url}" target="_blank" rel="nofollow">Gist was successfully created!</a>
       failure: "An error occured while saving gist"
 
   admin:
