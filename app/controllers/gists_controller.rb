@@ -7,10 +7,9 @@ class GistsController < ApplicationController
       Gist.create!(question: @test_passage.current_question, 
                     user: current_user, 
                     gist_url: result.url)
-      flash[:notice] = "#{t('.success')} #{view_context.link_to(result[:html_url], result[:html_url], target: :_blank, rel: :nofollow) }"
-    else
+      flash[:notice] = t( '.success', url: result[:html_url] )
+    else                    
       flash[:alert] = t('.failure')
-      
     end
     redirect_to @test_passage
   end

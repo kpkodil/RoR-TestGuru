@@ -47,7 +47,7 @@ en:
       header: "the %{title} Test was completed!"
   gists:
     create:
-      success: "Gist was successfully created!"
+      success:  <a href="%{url}" target="_blank" rel="nofollow">Gist was successfully created!</a>
       failure: "An error occured while saving gist"
 
   admin:
