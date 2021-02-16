@@ -16,9 +16,11 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
+  <div class="field password-confirmation-field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= octicon 'check-circle', height: 16, color: "green", class: 'text-success hide' %>
+    <%= octicon 'alert', height: 16, color: "red", class: 'text-success hide' %>
   </div>
 
   <div class="field">
