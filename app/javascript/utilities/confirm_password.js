@@ -3,26 +3,32 @@ document.addEventListener('turbolinks:load', function() {
   var control = document.querySelector('.password-confirmation-field')
 
   if (control) {
-    control.addEventListener('keyup', confirmPassword)
+    let confirmation_field = document.getElementById('user_password_confirmation')
+    let password_field = document.getElementById('user_password')
+    let check_icon = document.querySelector('.octicon-check-circle')
+    let alert_icon = document.querySelector('.octicon-alert')
+
+    control.addEventListener('keyup', function() {
+      confirmPassword(confirmation_field, password_field, check_icon, alert_icon)
+    })
   }
 })
 
-function confirmPassword() {
+function confirmPassword(confirmation_field, password_field, check_icon, alert_icon) {
 
-  var confirmation = document.getElementById('user_password_confirmation').value
-  var password = document.getElementById('user_password').value
-
-  if (confirmation == password) {
-    this.querySelector('.octicon-alert').classList.add('hide') 
-    this.querySelector('.octicon-check-circle').classList.remove('hide') 
+  if (confirmation_field.value == password_field.value) {
+    alert_icon.classList.add('hide') 
+    check_icon.classList.remove('hide') 
+    console.log("true")
   } else {
-    this.querySelector('.octicon-alert').classList.remove('hide')
-    this.querySelector('.octicon-check-circle').classList.add('hide') 
+    alert_icon.classList.remove('hide')
+    check_icon.classList.add('hide') 
+    console.log("false")
   }
-  
-  if (confirmation == "") {
-    this.querySelector('.octicon-alert').classList.add('hide') 
-    this.querySelector('.octicon-check-circle').classList.add('hide') 
+
+  if (confirmation_field.value == "") {
+    alert_icon.classList.add('hide') 
+    check_icon.classList.add('hide') 
   }
 } 
     
