@@ -1,12 +1,12 @@
 document.addEventListener('turbolinks:load', function() {
 
-  var control = document.querySelector('.password-confirmation-field')
+  const control = document.querySelector('.password-confirmation-field')
 
   if (control) {
-    let confirmation_field = document.getElementById('user_password_confirmation')
-    let password_field = document.getElementById('user_password')
-    let check_icon = document.querySelector('.octicon-check-circle')
-    let alert_icon = document.querySelector('.octicon-alert')
+    const confirmation_field = document.getElementById('user_password_confirmation')
+    const password_field = document.getElementById('user_password')
+    const check_icon = document.querySelector('.octicon-check-circle')
+    const alert_icon = document.querySelector('.octicon-alert')
 
     control.addEventListener('keyup', function() {
       confirmPassword(confirmation_field, password_field, check_icon, alert_icon)
