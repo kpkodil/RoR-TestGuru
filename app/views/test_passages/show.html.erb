@@ -4,8 +4,14 @@
   <%= @test_passage.current_question.title %>
 </h2>
 
+<progress class="progress-bar" 
+          data-test-questions-count="<%= @test_passage.test.questions.count %>"
+          data-number-of-question="<%= @test_passage.number_of_current_question  %>"
+          value = "0">
+</progress>
+
 <p>
-  <%= @test_passage.number_of_current_question %> of <%= @test_passage.test.questions.count %> questions
+  <%= @test_passage.number_of_current_question + 1 %> of <%= @test_passage.test.questions.count %> questions
 </p>
 <%= form_with urls: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :title, include_hidden: false do |b| %>
