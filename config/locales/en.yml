@@ -54,3 +54,5 @@ en:
     tests:
       create:
         success: "Test was succeGuru test!"
+      form_inline:
+        submit: "OK"
