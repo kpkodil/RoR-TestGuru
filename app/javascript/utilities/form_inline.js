@@ -1,16 +1,28 @@
 document.addEventListener('turbolinks:load', function() {
-  $('.form-inline-link').on('click', formInlineLinkHandler)
 
+  const controls = document.querySelectorAll('.form-inline-link')
   const errors = document.querySelector('.resource-errors')
 
+  if (controls.length > 0) {
+    formInlineHandlerWithErrors(errors)
+    formInlineLinkHandlerEach(controls) 
+  }
+})
+
+function formInlineHandlerWithErrors(errors) {
   if (errors) {
     const resourceId = errors.dataset.resourceId
     formInlineHandler(resourceId)
   }
-})
+}
+
+function formInlineLinkHandlerEach(controls) {
+  for (var i = 0; i < controls.length; i++) {
+    controls[i].addEventListener('click', formInlineLinkHandler)
+  }
+}
 
 function formInlineLinkHandler(event) {
-
   event.preventDefault()
   const testId = this.dataset.testId
   formInlineHandler(testId)
