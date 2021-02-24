@@ -1,7 +1,9 @@
 <% if user_signed_in? %>
   <p class="nav user">
     Welcome <b><%= current_user.email %></b> Guru<br>
-    <%= link_to 'Logout',  destroy_user_session_path, method: :delete %>
+    <%= link_to 'Logout',  destroy_user_session_path, method: :delete %><br>
+    <%= link_to 'All Badges', badges_path %>
+    <%= link_to 'Your Badges', guru_badges_path(current_user) %>
   </p>
 <% else %>
   <p class="nav user">

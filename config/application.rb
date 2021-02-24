@@ -20,5 +20,6 @@ module RoRTestguru
     config.i18n.default_locale = :en 
     # config.eager_load_paths << Rails.root.join("extras")
     config.autoload_paths << "#{Rails.root}/lib/clients"
+    config.autoload_paths += %W[#{config.root}/app/specifications]
   end
 end

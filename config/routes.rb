@@ -31,6 +31,11 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges 
   end
+
+  resources :badges, only: %i[index show]
+
+  get 'user/:user_id/badges(.:format)', to: 'user/badges#index', as: "guru_badges"
 
 end

@@ -34,19 +34,29 @@ unless Test.exists?
 
   Answer.create!([
     { title: "Answer1 t", question: questions[0], correct: true },
-    { title: "Answer2", question: questions[0] },
+    { title: "Answer2",   question: questions[0] },
     { title: "Answer3 t", question: questions[1], correct: true },
-    { title: "Answer4", question: questions[1] },
+    { title: "Answer4",   question: questions[1] },
     { title: "Answer5 t", question: questions[2], correct: true },
     { title: "Answer6 t", question: questions[3], correct: true },
     { title: "Answer7 t", question: questions[4], correct: true },
     { title: "Answer8 t", question: questions[5], correct: true }
   ])
 
-  Badge.create!(
-    { title: "Pass all of the tests successfully",
-      image_url: "image_url"
-    }
-  ).tests.push(Test.first, Test.second, Test.third)
+  Badge.create!([
+                  { title: "Finish_tests_by_category_#{Category.find(1).title}",
+                    image_url: "https://storage.needpix.com/rsynced_images/trophy.jpg",
+                    rule_type: :finish_tests_by_category,
+                    rule_value: 1 }, 
 
+                  { title: "Finish_test_#{Test.second.title}_first_time",
+                    image_url: "https://storage.needpix.com/rsynced_images/trophy.jpg",
+                    rule_type: :finish_test_first_time,
+                    rule_value: Test.second.id },
+
+                  { title: "Finish_tests_by_level_1",
+                    image_url: "https://storage.needpix.com/rsynced_images/trophy.jpg",
+                    rule_type: :finish_tests_by_level,
+                    rule_value: 1 },
+                ])
 end

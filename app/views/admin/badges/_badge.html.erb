@@ -1,0 +1,19 @@
+<tr>
+  <td><%= badge.title %></td>
+  <td>
+    <Img src= <%= badge.image_url %> Width="50" Height="50">  
+  </td>
+  <td><%= badge.rule_type %></td>
+  <td class='align-middle'><%= badge.rule_value %></td>
+  <td class='align-middle'>
+    <%= link_to 'Edit', 
+                edit_admin_badge_path(badge),
+                data: { test_id: badge.id } %> 
+  </td>
+  <td class='align-middle'>
+  <%= link_to 'Delete',
+              admin_badge_path(badge),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

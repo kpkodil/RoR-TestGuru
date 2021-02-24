@@ -55,7 +55,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
                           :current_sign_in_at,
                           :last_sign_in_at, 
                           :current_sign_in_ip, 
-                          :last_sign_id_ip,
+                          :last_sign_in_ip,
                           :confirmation_token, 
                           :confirmed_at, 
                           :confirmation_sent_at, 
