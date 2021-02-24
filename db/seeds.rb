@@ -33,13 +33,20 @@ unless Test.exists?
   ])
 
   Answer.create!([
-    { title: "Answer1", question: questions[0], correct: true },
+    { title: "Answer1 t", question: questions[0], correct: true },
     { title: "Answer2", question: questions[0] },
-    { title: "Answer3", question: questions[1], correct: true },
+    { title: "Answer3 t", question: questions[1], correct: true },
     { title: "Answer4", question: questions[1] },
-    { title: "Answer5", question: questions[2] },
-    { title: "Answer6", question: questions[3], correct: true },
-    { title: "Answer7", question: questions[4] },
-    { title: "Answer8", question: questions[5] }
+    { title: "Answer5 t", question: questions[2], correct: true },
+    { title: "Answer6 t", question: questions[3], correct: true },
+    { title: "Answer7 t", question: questions[4], correct: true },
+    { title: "Answer8 t", question: questions[5], correct: true }
   ])
+
+  Badge.create!(
+    { title: "Pass all of the tests successfully",
+      image_url: "image_url"
+    }
+  ).tests.push(Test.first, Test.second, Test.third)
+
 end

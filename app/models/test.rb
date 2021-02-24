@@ -5,6 +5,9 @@ class Test < ApplicationRecord
 
   has_many :questions, dependent: :destroy
   
+  has_many :badge_tests, dependent: :destroy
+  has_many :badges, through: :badge_tests
+
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 

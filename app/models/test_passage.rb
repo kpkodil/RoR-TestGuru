@@ -6,7 +6,9 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
-  before_update :before_update_set_next_question
+  before_update :before_update_set_next_question, unless: -> { complited? }
+
+  scope :complited_successfully, -> { where(successful: true) } 
 
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
@@ -21,6 +23,11 @@ class TestPassage < ApplicationRecord
 
   def success?
     success_rate >= 85
+  end
+
+  def set_result!
+    self.successful = true if self.complited? && self.success?
+    save!
   end
 
   def success_rate
@@ -46,9 +53,9 @@ class TestPassage < ApplicationRecord
   end
 
   def before_update_set_next_question
-    next_question = test.questions.order(:id)
-                                  .where('id > ?', current_question.id)
-                                  .first
-    self.current_question = next_question
+      next_question = test.questions.order(:id)
+                                    .where('id > ?', current_question.id)
+                                    .first
+      self.current_question = next_question
   end
 end
