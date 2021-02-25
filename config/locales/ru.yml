@@ -8,26 +8,187 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    footer:
+      test_guru: "TestGuru - Сайт для создания и прохождения тестов."
+      author: "Автор - Буров Павел"
+      project: "Учебнный проект в онлайн-школе Thinknetica"
+    nav:
+      welcome: "Привет"
+      logout: "Выйти"
+      login: "Войти"
+      register_new_guru: "Стать Гуру"
+      all_badges: "Просмотреть все бейджи"
+      your_badges: "Просмотреть полученные бейджи"
+
+  admin:
+
+    nav:
+      admin_panel: "Панель Администратора TestGuru"
+      welcome: "Привет"
+      logout: "Выйти"
+      all_badges: "Просмотреть все бейджи"
+
+    tests:
+      index:
+        tricky_tests: "Тесты"
+        title: "Название"
+        category: "Категория"
+        level: "Уровень"
+        questions_count: "Количество вопросов"
+        actions: "Действия"
+        new_test: "Новый тест"
+        guru's_gists: "Гуру гисты"
+      show:
+        title: "Название"
+        category: "Категория"
+        level: "Уровень"
+        questions: "Вопросы" 
+        actions: "Действия"
+        edit_test: "Редактировать %{test} тест " 
+        create_question: "Создать вопрос"
+        back_to_tests: "Назад к списку тестов" 
+      edit:
+        edit_test: "Редатирование теста %{test.title}" 
+        back_to_tests: "Назад к списку тестов"    
+      new:
+        create_new_test: "Создать новый тест"
+        success: "Тест успешно создан."
+        back_to_tests: "Назад к списку тестов"
+      form_inline:
+        submit: "Готово!" 
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+
+    questions:
+      show:
+        answers: "Ответы"
+        new_answer: "Создать новый ответ"
+        back_to_questions: "Назад к списку вопросов теста %{test}"
+        delete_question: "Удалить вопрос %{question}"
+      new:
+        back_to_test: "Назад к тесту %{test}"
+      edit: 
+        back_to_test: "Назад к тесту %{test}"
+      question:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+      show:
+        correct: "Правильность"
+        edit: "Редактировать"
+        delete: "Удалить ответ %{answer}"
+        back_to_question: "Назад к вопросу %{question}"
+      new:
+        new_answer: "Создание ответа к вопросу %{question}"
+        back_to_question: "Назад к вопросу %{question}"
+      edit:
+        edit_answer: "Редактирование ответа %{answer}"
+        show: "Показать"
+        back_to_question: "Назад к вопросу %{question}"
+
+    badges:
+      badge:
+        edit: "Редактировать"
+        delete: "Удалить"
+      edit:
+        edit_badge: "Редактирование бейджа %{badge}"
+        back_to_badges: "Назад к списку бейджей"
+      index:
+        all_badges: "Все бейджи"
+        title: "Название"
+        icon: "Изображение"
+        rule_type: "Тип правила"
+        rule_value: "Значение правила"
+        new_badge: "Создать бейдж"
+      new:
+        create_badge: "Создание бейджа"
+        back_to_badges: "Назад к списку бейджей"
+
+    gists:
+      gist:
+
+      index:
+        all_gists: "Список всех гистов"
+        user_email: "email пользователя"
+        question: "Вопрос"
+        back_to_tests: "Назад к списку тестов"
 
   tests:
+    test:
+      show: "Показать"
+      start: "Пройти тест"
     index:
-      header: "Доступные Тесты"
+      tricky_tests: "Тесты"
+      title: "Название"
+      category: "Категория"
+      level: "Уровень"
+      questions_count: "Количество вопросов"
+      actions: "Действия"
+    show:
+      title: "Название"
+      category: "Категория"
+      level: "Уровень"
+      questions: "Вопросы" 
+      actions: "Действия"
+      back_to_tests: "Назад к списку тестов" 
+
+  questions:
+    question:
+      show: "Показать"
+    show:  
+      answers: "Ответы"
+      back_to_question: "Назад к вопросам теста %{test}"
+
+  answers:
+    answer:
+      show: "Показать"
+    show:
+      correct: "Правильность"
+      back_to_question: "Назад к вопросу %{question}" 
 
   test_passages:
     result:
       header: "Тест %{title} успешно завершен"
-    gist:
-      success: "Gist успешно сохранен!  %{url}"
-      failure: "Во время сохранения gist произошла ошибка" 
-  admin:
-    tests:
-      create:
-        success: "Тест успешно создан."
-      index:
-        header: "Доступные тесты"
-      form_inline:
-        submit: "Готово!"  
+      passed: "Правильность ваших ответов: "
+      back_to_tests: "Назад к списку тестов" 
+    show:
+      passing: "Прохождение теста %{test}"
+      gist_question: "Создать гист по этому вопросу"
+      next: "Следующий вопрос"
+
+  gist:
+    success: "Gist успешно сохранен!  %{url}"
+    failure: "Во время сохранения gist произошла ошибка" 
 
   tests_mailer:
     completed_tests:
+      hooray: "Ура!"
       subject: "Вы успешно завершили тест на TestGuru"
+      congratulations: "Поздравлям! Ты только что завершил тест %{test}. Хочешь пройти другие тесты?"
+      more: "Больше тестов!"
+  badges:
+    badge:
+      show: "Показать"
+    index:
+      title: "Название"
+      icon: "Изображение"
+      actions: "Действия"
+    show:
+      icon_url: "URL изображения"
+      back_to_badges: "Назад к списку бейджей"
+      
+  user:
+    badges:
+      index:
+        header: "Бейджи Гуру"
+        title: "Название"
+        icon: "Изображение"
+

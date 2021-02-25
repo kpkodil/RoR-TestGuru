@@ -1,13 +1,13 @@
 <% if user_signed_in? %>
   <p class="nav user">
-    Welcome <b><%= current_user.email %></b> Guru<br>
-    <%= link_to 'Logout',  destroy_user_session_path, method: :delete %><br>
-    <%= link_to 'All Badges', badges_path %>
-    <%= link_to 'Your Badges', guru_badges_path(current_user) %>
+    <%= t('.welcome')%><b><%= current_user.email %><br>
+    <%= link_to t('.logout'),  destroy_user_session_path, method: :delete %><br>
+    <%= link_to t('.all_badges'), badges_path %>
+    <%= link_to t('.your_badges'), guru_badges_path(current_user) %>
   </p>
 <% else %>
   <p class="nav user">
-    <%= link_to 'Login', new_user_session_path %> |
-    <%= link_to 'Register new Guru', new_user_registration_path %>
+    <%= link_to t('.login'), new_user_session_path %> |
+    <%= link_to t('.register_new_guru'), new_user_registration_path %>
   </p>
 <% end %>

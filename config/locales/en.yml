@@ -32,27 +32,192 @@
 en:
   hello: "Hello world"
   
-  shared:
+shared:
     errors:
       header:
+        many: "%{count} errors detected"
         one: "%{count} error detected"
-        other: "%{count} errors detected"
+    footer:
+      test_guru: "TestGuru - A website for creating and passing the tests"
+      author: "Автор - Буров Павел"
+      project: "Study project at Thinknetica online school"
+    nav:
+      welcome: "Hello"
+      logout: "Logout"
+      login: "Login"
+      register_new_guru: "Become a Guru"
+      all_badges: "View all badges"
+      your_badges: "View received badges"
+
+  admin:
+
+    nav:
+      admin_panel: "TestGuru Admin Panel"
+      welcome: "Hello"
+      logout: "Logout"
+      all_badges: "View all badges"
+
+    tests:
+      index:
+        tricky_tests: "Tests"
+        title: "Title"
+        category: "Category"
+        level: "Level"
+        questions_count: "Questions count"
+        actions: "Actions"
+        new_test: "Create test"
+        guru's_gists: "Guru's gists"
+      show:
+        title: "Title"
+        category: "Category"
+        level: "Level"
+        questions: "Questions" 
+        actions: "Actions"
+        edit_test: "Edit %{test} test" 
+        create_question: "Create a question"
+        back_to_tests: "Back to questions list" 
+      edit:
+        edit_test: "Editing test %{test.title}" 
+        back_to_tests: "Back to questions list"    
+      new:
+        create_new_test: "Create test"
+        success: "Test was successfully created"
+        back_to_tests: "Back to questions list"
+      form_inline:
+        submit: "OK" 
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "delete"
+
+    questions:
+      show:
+        answers: "Answers"
+        new_answer: "Create an answer"
+        back_to_questions: "Back to %{test} questions list"
+        delete_question: "delete question %{question}"
+      new:
+        back_to_test: "Back to%{test}"
+      edit: 
+        back_to_test: "Back to %{test}"
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "delete"
+
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "delete"
+      show:
+        correct: "Successful"
+        edit: "Edit"
+        delete: "delete answer %{answer}"
+        back_to_question: "Back to question %{question}"
+      new:
+        new_answer: "Creating a %{question} answer"
+        back_to_question: "Back to question %{question}"
+      edit:
+        edit_answer: "Editing answer %{answer}"
+        show: "Show"
+        back_to_question: "Back to question %{question}"
+
+    badges:
+      badge:
+        edit: "Edit"
+        delete: "delete"
+      edit:
+        edit_badge: "Editing badge %{badge}"
+        back_to_badges: "Back to badges list"
+      index:
+        all_badges: "All badges"
+        title: "Title"
+        icon: "Icon"
+        rule_type: "Rule type"
+        rule_value: "Rule value"
+        new_badge: "Create a badge"
+      new:
+        create_badge: "Creating badge"
+        back_to_badges: "Back to badges list"
+
+    gists:
+      gist:
+
+      index:
+        all_gists: "Gists list"
+        user_email: "User email"
+        question: "Question"
+        back_to_tests: "Back to questions list"
+
 
   tests:
+    test:
+      show: "Show"
+      start: "Пройти тест"
     index:
-      header: "Tricky Tests"
+      tricky_tests: "Tests"
+      title: "Title"
+      category: "Category"
+      level: "Level"
+      questions_count: "Questions count"
+      actions: "Actions"
+    show:
+      title: "Title"
+      category: "Category"
+      level: "Level"
+      questions: "Questions" 
+      actions: "Actions"
+      back_to_tests: "Back to questions list" 
+
+  questions:
+    question:
+      show: "Show"
+    show:  
+      answers: "Answers"
+      back_to_question: "Back to %{test} questions"
+
+  answers:
+    answer:
+      show: "Show"
+    show:
+      correct: "Successful"
+      back_to_question: "Back to question %{question}" 
 
   test_passages:
     result:
-      header: "the %{title} Test was completed!"
-  gists:
-    create:
-      success:  <a href="%{url}" target="_blank" rel="nofollow">Gist was successfully created!</a>
-      failure: "An error occured while saving gist"
+      header: "Тест %{title} complited successfully"
+      passed: "Successful rate: "
+      back_to_tests: "Back to questions list" 
+    show:
+      passing: "Passing of test %{test}"
+      gist_question: "Create question gist"
+      next: "Next question"
 
-  admin:
-    tests:
-      create:
-        success: "Test was succeGuru test!"
-      form_inline:
-        submit: "OK"
+  gist:
+    success: "Gist was successfully created!  %{url}"
+    failure: "An error ocurred while sasving a gist" 
+
+  tests_mailer:
+    completed_tests:
+      hooray: "Hooray!"
+      subject: "You have successfully completed the test on TestGuru"
+      congratulations: "Congratulations!  You just completed a test %{test}. Do you want to pass other Tests?"
+      more: "More!"
+  badges:
+    badge:
+      show: "Show"
+    index:
+      title: "Title"
+      icon: "Icon"
+      actions: "Actions"
+    show:
+      icon_url: "Image URL"
+      back_to_badges: "Back to badges list"
+
+  user:
+    badges:
+      index:
+        header: "Guru's badges"
+        title: "Title"
+        icon: "Icon"

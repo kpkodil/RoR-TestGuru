@@ -4,18 +4,10 @@
 </h2>
 
 <p>
-  <strong>Icon URL:</strong><br>
+  <strong><%= t('.icon_url')%>:</strong><br>
   <%= @badge.image_url %><br>
   <Img src= <%= @badge.image_url %> Width="100" Height="100">
 </p>
 
-<p>
-  <strong>Rule Type:</strong><br>
-  <%= @badge.rule_type %>
-</p>
-<p>
-  <strong>Rule Value:</strong><br>
-  <%= @badge.rule_value %>
-</p>
 
-<%= link_to 'Back', badges_path %> 
+<%= link_to t('.back_to_badges'), badges_path %> 

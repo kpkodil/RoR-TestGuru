@@ -17,7 +17,8 @@ module RoRTestguru
     # in config/environments, which are processed later.
     #
     config.time_zone = "Moscow"
-    config.i18n.default_locale = :en 
+    config.i18n.default_locale = :ru 
+    config.i18n.locale = :ru
     # config.eager_load_paths << Rails.root.join("extras")
     config.autoload_paths << "#{Rails.root}/lib/clients"
     config.autoload_paths += %W[#{config.root}/app/specifications]

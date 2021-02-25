@@ -1,12 +1,10 @@
-<h1>All Badges</h1>
+<h1><%= t('.header')%></h1>
 
 <table>
   <tr>
-    <th>Badge Title</th>
-    <th>Icon</th>
-    <th>Rule_type</th>
-    <th>Rule_value</th>
-    <th colspan="1">Actions</th>
+    <th><%= t('.title')%></th>
+    <th><%= t('.icon')%></th>
+    <th><%= t('.actions')%></th>
   </tr>
 
   <%= render @badges %>

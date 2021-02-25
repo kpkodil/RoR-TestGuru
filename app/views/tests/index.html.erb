@@ -1,4 +1,4 @@
-<h1>Tricky Tests</h1>
+<h1><%= t('.tricky_tests')%></h1>
 
 <table>
   <tr>
@@ -7,9 +7,10 @@
       <%= octicon 'arrow-up', class: "text-success hide" %>
       <%= octicon 'arrow-down', class: "text-success hide" %>
     </th>
-    <th>Level </th>
-    <th>Question count </th>
-    <th colspan="4">Actions</th>
+    <th><%= t('.category')%></th>
+    <th><%= t('.level')%></th>
+    <th><%= t('.questions_count')%></th>
+    <th colspan="4"><%= t('.actions')%></th>
   </tr>
 
   <%= render @tests %>

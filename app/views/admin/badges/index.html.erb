@@ -1,4 +1,4 @@
-<h1>All Badges</h1>
+<h1><%= t('.all_badges')%></h1>
 
 <p>
   <%= render 'shared/errors', resource: @badge%>
@@ -7,15 +7,15 @@
 
 <table class="table">
   <tr>
-    <th >Title</th>
-    <th>Icon </th>
-    <th>Rule_type </th>
-    <th>Rule_value </th>
-    <th colspan="1">Actions</th>
+    <th ><%= t('.title')%></th>
+    <th><%= t('.icon')%></th>
+    <th><%= t('.rule_type')%> </th>
+    <th><%= t('.rule_value')%> </th>
+    <th colspan="1"><%= t('.actions')%></th>
   </tr>
 
   <%= render @badges %>
 
 </table>
 
-<%= link_to 'New badge', new_admin_badge_path %><br>
+<%= link_to t('.new_badge'), new_admin_badge_path %><br>

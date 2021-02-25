@@ -1,10 +1,10 @@
-<h1>Gists</h1>
+<h1><%= t('.all_gists')%></h1>
 
 <table>
   <tr>
-    <th>User Email </th>
-    <th>Question </th>
-    <th>Gist URL</th>
+    <th><%= t('.user_email')%></th>
+    <th><%= t('.question')%></th>
+    <th><%= t('.gist_url')%></th>
   </tr>
 
   <%= render @gists %>
@@ -12,5 +12,5 @@
 </table>
 
 <p>
-  <%= link_to 'Guru\'s tests', admin_tests_path %>
+  <%= link_to t('.back_to_tests'), admin_tests_path %>
 </p><br>

@@ -1,5 +1,5 @@
-<h1> Edit <%= @badge.title %> badge </h1>
+<h1> <%= t('.edit_badge', badge: @badge.title)%></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back to badges', admin_badges_path %><br>
+<%= link_to t('.back_to_badges'), admin_badges_path %><br>
