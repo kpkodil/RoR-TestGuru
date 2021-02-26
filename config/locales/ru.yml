@@ -156,7 +156,7 @@ ru:
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершен"
+      header: "Тест %{test} успешно завершен"
       passed: "Правильность ваших ответов: "
       back_to_tests: "Назад к списку тестов" 
     show:
@@ -164,7 +164,7 @@ ru:
       gist_question: "Создать гист по этому вопросу"
       next: "Следующий вопрос"
 
-  gist:
+  gists:
     success: "Gist успешно сохранен!  %{url}"
     failure: "Во время сохранения gist произошла ошибка" 
 

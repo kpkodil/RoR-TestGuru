@@ -31,11 +31,18 @@
 
 en:
   hello: "Hello world"
-  
-shared:
+
+  activerecord:
     errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        
+  shared:
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
       header:
-        many: "%{count} errors detected"
+        other: "%{count} errors detected"
         one: "%{count} error detected"
     footer:
       test_guru: "TestGuru - A website for creating and passing the tests"
