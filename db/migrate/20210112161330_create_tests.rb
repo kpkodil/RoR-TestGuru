@@ -3,6 +3,7 @@ class CreateTests < ActiveRecord::Migration[6.1]
     create_table :tests do |t|
       t.string :title, null: false 
       t.integer :level, null: false, default: 0
+      t.integer :timer, null: false, default: 60
       t.references :author,   null: false, foreign_key: {to_table: :users}
       t.references :category, null: false, foreign_key: true
 

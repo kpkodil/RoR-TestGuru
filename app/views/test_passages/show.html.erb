@@ -10,6 +10,14 @@
           value = "0">
 </progress>
 
+
+<p class="timer"
+    data-test-passage-created-at="<%= @test_passage.created_at.to_i %>"
+    data-test-timer="<%= @test_passage.test.timer %>"  >
+    <%= t('.remaining_time')%>
+    <span id="current_time"></span>
+</p>
+
 <p>
   <%= @test_passage.number_of_current_question + 1 %> of <%= @test_passage.test.questions.count %> questions
 </p>
@@ -21,5 +29,8 @@
     </p>
   <% end %>
   <p><%= link_to t('.gist_question'), test_passage_gists_path(@test_passage), method: :post %></p>
-  <p><%= form.submit t('.next') %></p>
+
+  <p id="form">
+    <%= form.submit t('.next'), :id => 'next'%>
+  </p>
 <% end %>

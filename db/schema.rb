@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_160533) do
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 0, null: false
+    t.integer "timer", default: 60, null: false
     t.bigint "author_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false

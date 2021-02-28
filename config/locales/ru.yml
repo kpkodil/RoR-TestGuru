@@ -35,6 +35,7 @@ ru:
         category: "Категория"
         level: "Уровень"
         questions_count: "Количество вопросов"
+        timer: "Таймер (в минутах)"
         actions: "Действия"
         new_test: "Новый тест"
         guru's_gists: "Гуру гисты"

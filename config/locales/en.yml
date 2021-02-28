@@ -71,6 +71,7 @@ en:
         category: "Category"
         level: "Level"
         questions_count: "Questions count"
+        timer: "Timer (minutes)"
         actions: "Actions"
         new_test: "Create test"
         guru's_gists: "Guru's gists"
@@ -167,7 +168,9 @@ en:
       title: "Title"
       category: "Category"
       level: "Level"
+      timer: "Timer (minutes)"
       questions_count: "Questions count"
+      timer: "Timer (minutes)"
       actions: "Actions"
     show:
       title: "Title"
@@ -198,6 +201,7 @@ en:
       back_to_tests: "Back to questions list" 
     show:
       passing: "Passing of test %{test}"
+      remaining_time: "Remaining time:"
       gist_question: "Create question gist"
       next: "Next question"
 

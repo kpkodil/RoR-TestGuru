@@ -1,40 +1,29 @@
 document.addEventListener('turbolinks:load', function() {
-  
-  
   const timer = document.querySelector('.timer')
-    let counter = 0
-    
-  // if (timer) {
-  //   createdAt = timer.dataset.testPassageCreatedAt
-  //   start_time = createdAt.split(' ')[1]
-  //   // startTime = new Time(start_time)
-  //   start_seconds = start_time.split(':')[2]
-
-  //   updatedAt = timer.dataset.testPassageUpdatedAt
-  //   update_time = updatedAt.split(' ')[1]
-
-  //   // spent_time
-
-  // }
-
   if (timer) {
-    // console.log(start_seconds)
-    // // console.log(timer.dataset.testPassageCreatedAt - timer.dataset.testPassageUpdatedAt)
-    // console.log(start_time)
-    // console.log(update_time)
-    // // console.log(startTime)
-    // console.log(start_time - update_time)
-    // console.log(  )
     passed_time()
   }
 
   function passed_time() {
-    let time = timer.dataset.testTimer
-    console.log(counter)
-    console.log(time)
-    counter++
-    // time - counter
-    document.getElementById('current_time').innerHTML = time - counter
+    const createdAt = timer.dataset.testPassageCreatedAt
+    const testTimerSeconds = timer.dataset.testTimer * 60
+    let currentTime = parseInt(Date.now()/1000)
+    spentTime = currentTime - createdAt
+    result = testTimerSeconds - spentTime
+    console.log(result)
+    if (result < 1 ) {
+      document.getElementById('next').addEventListener('click', function(){})
+      document.getElementById('next').click()
+    }
+    document.getElementById('current_time').innerHTML = converted_seconds(result)
     setTimeout(passed_time, 1000 )
   }
+
+  function converted_seconds(seconds){
+    resultMinutes = Math.floor(seconds/60)
+    resultSeconds = seconds - resultMinutes * 60
+    result = resultMinutes + ":" + resultSeconds
+    return result
+  }
+
 })
