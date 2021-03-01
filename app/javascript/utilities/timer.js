@@ -12,8 +12,7 @@ document.addEventListener('turbolinks:load', function() {
     result = testTimerSeconds - spentTime
     console.log(result)
     if (result < 1 ) {
-      document.getElementById('next').addEventListener('click', function(){})
-      document.getElementById('next').click()
+      document.getElementById('submit_form').submit()
     }
     document.getElementById('current_time').innerHTML = converted_seconds(result)
     setTimeout(passed_time, 1000 )

@@ -18,7 +18,7 @@ class TestPassage < ApplicationRecord
   end
 
   def complited?
-    current_question.nil?
+    current_question.nil? || self.end_of_time?
   end
 
   def success?
@@ -39,6 +39,10 @@ class TestPassage < ApplicationRecord
   end
 
   private
+
+  def end_of_time?
+    (Time.now - self.created_at) > self.test.timer*60
+  end
   
   def correct_answers
     current_question.answers.correct
